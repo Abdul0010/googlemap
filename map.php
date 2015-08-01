@@ -110,9 +110,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <option value="BICYCLING">Bicycling</option>
   <option value="TRANSIT">Transit</option>
 </select>
-<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
+<div id="directionsPanel" style="float:right;width:30%;height 100%;background-color: gainsboro;
+}"></div>
 
-    <div id="map-canvas"><div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+    <div id="map-canvas"><div id="map-canvas" style="float:left;width:70%; height:100%";></div>
 </div>
   </body>
 </html>
