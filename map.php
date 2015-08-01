@@ -67,12 +67,13 @@ function initialize() {
 }
 
 function calcRoute() {
+   var selectedMode = document.getElementById("mode").value;
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
   var request = {
       origin:start,
       destination:end,
-      travelMode: google.maps.TravelMode.DRIVING
+      travelMode: google.maps.TravelMode[selectedMode]// CAN BE DRIVING ,WALKING ,TRANSIT OR BICYCLING
   };
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
@@ -96,8 +97,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <select id="end" onchange="calcRoute();">
       <option value="Batu Cave">Batu Cave</option>
       <option value="Sri Hartamas">Sri Hartamas</option>
-    
+
     </select>
+    </div>
+    <div id="panel2">
+    <strong>Mode of Travel: </strong>
+<select id="mode" onchange="calcRoute();">
+  <option value="DRIVING">Driving</option>
+  <option value="WALKING">Walking</option>
+  <option value="BICYCLING">Bicycling</option>
+  <option value="TRANSIT">Transit</option>
+</select>
+
     </div>
     <div id="map-canvas"></div>
   </body>
