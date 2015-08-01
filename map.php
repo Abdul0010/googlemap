@@ -64,6 +64,9 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+
+
 }
 
 function calcRoute() {
@@ -100,7 +103,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     </select>
     </div>
-    <div id="panel2">
     <strong>Mode of Travel: </strong>
 <select id="mode" onchange="calcRoute();">
   <option value="DRIVING">Driving</option>
@@ -108,8 +110,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <option value="BICYCLING">Bicycling</option>
   <option value="TRANSIT">Transit</option>
 </select>
+<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 
-    </div>
-    <div id="map-canvas"></div>
+    <div id="map-canvas"><div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+</div>
   </body>
 </html>
